@@ -1,12 +1,43 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { useState, useEffect } from "react";
+import Hero from "@/components/portfolio/Hero";
+import About from "@/components/portfolio/About";
+import Skills from "@/components/portfolio/Skills";
+import Projects from "@/components/portfolio/Projects";
+import Experience from "@/components/portfolio/Experience";
+import Contact from "@/components/portfolio/Contact";
+import Navbar from "@/components/portfolio/Navbar";
+import Footer from "@/components/portfolio/Footer";
+import Loading from "@/components/portfolio/Loading";
 
 const Index = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-black text-white">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 };
