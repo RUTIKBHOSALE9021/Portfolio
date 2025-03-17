@@ -14,10 +14,9 @@ const Index = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);

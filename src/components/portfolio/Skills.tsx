@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 interface Skill {
@@ -16,11 +15,9 @@ const Skills = () => {
     { name: "Tailwind CSS", category: "frontend", color: "bg-cyan-500" },
     { name: "Redux", category: "frontend", color: "bg-purple-600" },
     { name: "Ant Design", category: "frontend", color: "bg-blue-500" },
-    { name: "Django", category: "backend", color: "bg-green-600" },
-    { name: "Python", category: "backend", color: "bg-yellow-500" },
-    { name: "REST API", category: "backend", color: "bg-green-500" },
-    { name: "Java", category: "backend", color: "bg-orange-500" },
-    { name: "Git/GitHub", category: "tools", color: "bg-orange-600" },
+    { name: "React Native", category: "mobile", color: "bg-green-500" },
+    { name: "Expo", category: "mobile", color: "bg-orange-500" },
+    { name: "Git/GitHub/GitLab", category: "tools", color: "bg-orange-600" },
     { name: "Figma", category: "tools", color: "bg-purple-500" },
     { name: "UI/UX Design", category: "design", color: "bg-pink-500" },
   ];
@@ -44,7 +41,7 @@ const Skills = () => {
         </div>
         
         <div className="flex flex-wrap justify-center gap-3 mb-10">
-          {["all", "frontend", "backend", "tools", "design"].map((category) => (
+          {["all", "frontend", "mobile", "tools", "design"].map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}

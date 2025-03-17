@@ -1,4 +1,4 @@
-
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { Send, MapPin, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,21 @@ const Contact = () => {
     subject: "",
     message: ""
   });
+
+  const Platform = [
+    {
+      name: "GitHub",
+      url: "https://github.com/RUTIKBHOSALE9021"
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/rutikbhosale/"
+    },
+    {
+      name: "Medium",
+      url: "https://medium.com/@rutikbhosale"
+    },
+  ]
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -21,28 +36,37 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
   
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  const serviceId = "service_aalw5he";
+  const templateId = "template_umvgs0v";
+  const publicKey = "Ct1tOlydeqJ7HzQHu";
+
+  try {
+    await emailjs.send(serviceId, templateId, formData, publicKey);
     
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-        variant: "default"
-      });
-      
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: ""
-      });
-      
-      setIsSubmitting(false);
-    }, 1500);
-  };
+    toast({
+      title: "Message sent!",
+      description: "Thanks for reaching out. I'll get back to you soon.",
+      variant: "default"
+    });
+
+    setFormData({ name: "", email: "", subject: "", message: "" });
+
+  } catch (error) {
+    console.error("Error sending message:", error);
+    toast({
+      title: "Error",
+      description: "Failed to send message. Please try again.",
+      variant: "destructive"
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <section id="contact" className="py-20 relative">
@@ -51,8 +75,8 @@ const Contact = () => {
       
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-          <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6"></div>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Chat</h2>
+        <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-6"></div>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
             Have a project in mind or just want to chat? Feel free to reach out!
           </p>
@@ -138,7 +162,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium mb-1">Location</h4>
-                  <p className="text-gray-400">Mumbai, Maharashtra, India</p>
+                  <p className="text-gray-400">Pune, Maharashtra, India</p>
                 </div>
               </div>
               
@@ -149,7 +173,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-lg font-medium mb-1">Email</h4>
                   <a href="mailto:rutik@example.com" className="text-gray-400 hover:text-white transition-colors">
-                    rutik@example.com
+                    rutikbhosale7218@gamil.com
                   </a>
                 </div>
               </div>
@@ -161,7 +185,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-lg font-medium mb-1">Phone</h4>
                   <a href="tel:+919876543210" className="text-gray-400 hover:text-white transition-colors">
-                    +91 98765 43210
+                    +91 9021181641 
                   </a>
                 </div>
               </div>
@@ -170,13 +194,14 @@ const Contact = () => {
             <div className="mt-12">
               <h3 className="text-xl font-bold mb-6">Follow Me</h3>
               <div className="flex gap-3">
-                {["GitHub", "LinkedIn", "Twitter", "Instagram"].map((platform) => (
+                {Platform.map((platform,index) => (
                   <a
-                    key={platform}
-                    href="#"
+                   target="_blank"
+                    key={index}
+                    href={platform.url}
                     className="bg-gray-800 p-3 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
                   >
-                    {platform}
+                    {platform.name}
                   </a>
                 ))}
               </div>

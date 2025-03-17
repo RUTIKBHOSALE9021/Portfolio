@@ -14,67 +14,54 @@ const Experience = () => {
   const experiences: ExperienceItem[] = [
     {
       id: 1,
-      title: "Senior Frontend Developer",
-      company: "TechCorp Inc.",
-      period: "Jan 2021 - Present",
+      title: "Software Developer",
+      company: "Tacitbase",
+      period: "April 2024 - Present",
       description: [
-        "Developed and maintained a distributed chat application with WebSockets",
-        "Implemented role-based access control for enterprise clients",
-        "Optimized application performance resulting in 40% faster load times",
-        "Led a team of 4 developers for new feature implementations"
+        "Enhanced application performance from 50% to 80% efficiency",
+        "Developed and optimized job posting and candidate tracking modules",
+        "Integrated AI-powered job description generation for improved UX",
+        "Developing plugins to extend ATS functionality and improve automation"
       ],
       type: "work"
-    },
+    },   
     {
       id: 2,
-      title: "Frontend Developer",
-      company: "WebSolutions Ltd.",
-      period: "Mar 2019 - Dec 2020",
+      title: "Software Developer Intern",
+      company: "Tacitbase",
+      period: "Jan 2024 - April 2024",
       description: [
-        "Built responsive UIs using React and Typescript",
-        "Created a job listing platform with filtering and search capabilities",
-        "Collaborated with UX designers to implement pixel-perfect designs",
-        "Developed a candidate review system with complex state management"
+        "Learned and implemented core Web Technology software functionalities",
+        "Worked on role-based access control and user authentication",
+        "Gained hands-on experience with React, TypeScript, and Redux",
+        "Contributed to UI enhancements and debugging existing features"
       ],
       type: "work"
-    },
-    {
-      id: 3,
-      title: "Junior Developer",
-      company: "StartupHub",
-      period: "Jun 2017 - Feb 2019",
-      description: [
-        "Assisted in developing various client websites with React",
-        "Implemented UI components using Ant Design and custom styling",
-        "Contributed to an internal tool for content management",
-        "Participated in code reviews and testing processes"
-      ],
-      type: "work"
-    },
+    },     
     {
       id: 4,
-      title: "Master's in Computer Science",
-      company: "Tech University",
-      period: "2015 - 2017",
+      title: "Bachelor of Engineering in Information Technology",
+      company: "Sinhgad Institute, SPPU",
+      period: "2020 - 2024",
       description: [
-        "Specialized in Web Technologies and Software Engineering",
-        "Thesis: \"Modern Frontend Frameworks and Performance Optimization\"",
-        "GPA: 3.8/4.0"
+        "CGPA: 9.0",
+        "Coursework in Programming, Data Structures, and Web Development",
       ],
       type: "education"
     },
     {
       id: 5,
-      title: "Bachelor's in Information Technology",
-      company: "State University",
-      period: "2011 - 2015",
+      title: "Higher Secondary Certificate (HSC) in Science",
+      company: "BGP Sahyadri Jr. College, Sangamner",
+      period: "2018 - 2020",
       description: [
-        "Coursework in Programming, Data Structures, and Web Development",
-        "Developed a student portal as part of final year project",
-        "GPA: 3.7/4.0"
+        "Percentage: 67%",
+        "Subjects: Physics, Chemistry, Mathematics, and Biology (PCMB)",
+        "Excelled in mathematics and problem-solving"
       ],
       type: "education"
     }
+    
   ];
 
   const workExperience = experiences.filter(exp => exp.type === "work");
