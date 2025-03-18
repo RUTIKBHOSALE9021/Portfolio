@@ -177,12 +177,6 @@ const handleSubmit = async (e: React.FormEvent) => {
                   </a>
                 </div>
               </div>
-              
-              <div className="flex gap-4">
-                <div className="bg-gray-800 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-purple-500" />
-                </div>
-              </div>
             </div>
             
             <div className="mt-12">
