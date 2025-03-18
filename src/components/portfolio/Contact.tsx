@@ -182,12 +182,6 @@ const handleSubmit = async (e: React.FormEvent) => {
                 <div className="bg-gray-800 p-3 rounded-lg">
                   <Phone className="h-6 w-6 text-purple-500" />
                 </div>
-                <div>
-                  <h4 className="text-lg font-medium mb-1">Phone</h4>
-                  <a href="tel:+919876543210" className="text-gray-400 hover:text-white transition-colors">
-                    +91 9021181641 
-                  </a>
-                </div>
               </div>
             </div>
             
