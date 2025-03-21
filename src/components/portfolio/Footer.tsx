@@ -15,9 +15,7 @@ const Footer = () => {
           </div>
           
           <div className="text-gray-400 flex flex-wrap py-4 items-center">
-            <span>© {currentYear} Rutik. Made with</span>
-            <Heart className="h-4 w-4 mx-1 text-red-500 fill-red-500" />
-            <span>All rights reserved.</span>
+            <span>© {currentYear} Rutik. All rights reserved.</span>
           </div>
           
           <div className="mt-4 md:mt-0">

@@ -43,12 +43,12 @@ const Hero = () => {
               >
                 <Mail className="mr-2 h-4 w-4" /> Contact Me
               </Button>
-              <Button
+              {/* <Button
                 variant="outline"
                 className="border-gray-700 text-black hover:bg-gray-200"
               >
                 <Download className="mr-2 h-4 w-4" /> Download Resume
-              </Button>
+              </Button> */}
               <Button
                 variant="ghost"
                 onClick={() => scrollToSection("projects")}
