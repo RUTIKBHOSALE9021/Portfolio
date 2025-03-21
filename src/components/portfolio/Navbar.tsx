@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -43,7 +42,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex space-x-8">
-          {["home", "about", "skills", "projects", "experience", "contact"].map((item) => (
+          {["home", "about", "skills", "projects", "experience", "blog", "contact"].map((item) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
@@ -67,7 +66,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-md absolute top-full left-0 w-full py-4 shadow-lg">
           <nav className="flex flex-col space-y-4 px-4">
-            {["home", "about", "skills", "projects", "experience", "contact"].map((item) => (
+            {["home", "about", "skills", "projects", "experience", "blog", "contact"].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
