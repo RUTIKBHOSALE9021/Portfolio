@@ -18,7 +18,7 @@ const Blog = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`https://feed2json.org/convert?url=https://medium.com/feed/@rutikbhosale`)
+    fetch(`https://vendorfinder.onrender.com/medium/blogs`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Failed to fetch data");
